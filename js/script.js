@@ -53,7 +53,7 @@ var tituloOracao = [
    "Glória ao Pai...",
    "Ó, meu Jesus...",
    "Agradecimento do Terço",
-   "Salve Rainha"
+   "Salve Rainha..."
 ]
 
 var oracao = [
@@ -251,7 +251,6 @@ function refreshProgress() {
             text1.innerHTML = tituloOracao[0] + "<br><br>";
             text2.innerHTML = tituloOracao[1] + "<br><br>";
             text3.innerHTML = tituloOracao[2];
-
             text1.onclick = function(){ alert(oracao[0]); };
             text2.onclick = function(){ alert(oracao[1]); };
             text3.onclick = function(){ alert(oracao[2]); };
@@ -376,7 +375,157 @@ function refreshProgress() {
             clearPrayBox();
             aveMaria("2-mist-10");
             break;
-    
+        case 28:
+            clearPrayBox();
+            paiNosso("Pai-Nosso-04");
+            break;
+        case 29:
+            clearPrayBox();
+            rezandoMisterio(3, "3-mist-01");
+            break;
+        case 30:
+            clearPrayBox();
+            aveMaria("3-mist-02");
+            break;
+        case 31:
+            clearPrayBox();
+            aveMaria("3-mist-03");
+            break;
+        case 32:
+            clearPrayBox();
+            aveMaria("3-mist-04");
+            break;
+        case 33:
+            clearPrayBox();
+            aveMaria("3-mist-05");
+            break;
+        case 34:
+            clearPrayBox();
+            aveMaria("3-mist-06");
+            break;
+        case 35:
+            clearPrayBox();
+            aveMaria("3-mist-07");
+            break;
+        case 36:
+            clearPrayBox();
+            aveMaria("3-mist-08");
+            break;
+        case 37:
+            clearPrayBox();
+            aveMaria("3-mist-09");
+            break;
+        case 38:
+            clearPrayBox();
+            aveMaria("3-mist-10");
+            break;
+        case 39:
+            clearPrayBox();
+            paiNosso("Pai-Nosso-05");
+            break;
+        case 40:
+            clearPrayBox();
+            rezandoMisterio(4, "4-mist-01");
+            break;
+        case 41:
+            clearPrayBox();
+            aveMaria("4-mist-02");
+            break;
+        case 42:
+            clearPrayBox();
+            aveMaria("4-mist-03");
+            break;
+        case 43:
+            clearPrayBox();
+            aveMaria("4-mist-04");
+            break;
+        case 44:
+            clearPrayBox();
+            aveMaria("4-mist-05");
+            break;
+        case 45:
+            clearPrayBox();
+            aveMaria("4-mist-06");
+            break;
+        case 46:
+            clearPrayBox();
+            aveMaria("4-mist-07");
+            break;
+        case 47:
+            clearPrayBox();
+            aveMaria("4-mist-08");
+            break;
+        case 48:
+            clearPrayBox();
+            aveMaria("4-mist-09");
+            break;
+        case 49:
+            clearPrayBox();
+            aveMaria("4-mist-10");
+            break;
+        case 50:
+            clearPrayBox();
+            paiNosso("Pai-Nosso-06");
+            break;
+        case 51:
+            clearPrayBox();
+            rezandoMisterio(5, "5-mist-01");
+            break;
+        case 52:
+            clearPrayBox();
+            aveMaria("5-mist-02");
+            break;
+        case 53:
+            clearPrayBox();
+            aveMaria("5-mist-03");
+            break;
+        case 54:
+            clearPrayBox();
+            aveMaria("5-mist-04");
+            break;
+        case 55:
+            clearPrayBox();
+            aveMaria("5-mist-05");
+            break;
+        case 56:
+            clearPrayBox();
+            aveMaria("5-mist-06");
+            break;
+        case 57:
+            clearPrayBox();
+            aveMaria("5-mist-07");
+            break;
+        case 58:
+            clearPrayBox();
+            aveMaria("5-mist-08");
+            break;
+        case 59:
+            clearPrayBox();
+            aveMaria("5-mist-09");
+            break;
+        case 60:
+            clearPrayBox();
+            aveMaria("5-mist-10");
+            break;
+        case 61:
+            clearPrayBox();
+            document.getElementById("Salve-Rainha").style.fill = corJaRezado;
+
+            butNext.innerHTML = "Concluído!";
+
+            text1.innerHTML = tituloOracao[7] + "<br><br>";
+            text2.innerHTML = tituloOracao[8];
+            text1.onclick = function(){ alert(oracao[7]); };
+            text2.onclick = function(){ alert(oracao[8]); };
+            break;
+        case 62:
+            alert("Parabéns, você concluiu o Terço!!\nCom certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes!");
+            alert("Obrigado por rezar conosco!\nQue Deus te abençoe sempre!");
+            
+            location.reload();
+            
+            break;
+
         default:
             clearPrayBox();
             break;
