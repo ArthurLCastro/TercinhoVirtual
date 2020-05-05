@@ -220,6 +220,24 @@ function rezandoMisterio(mist, conta) {
     document.getElementById(conta).style.fill = corJaRezado;
 }
 
+function aveMaria(conta) {
+    text1.innerHTML = tituloOracao[4];
+    text1.onclick = function(){ alert(oracao[4]); };
+    document.getElementById(conta).style.fill = corJaRezado;
+}
+
+function paiNosso(conta) {
+    document.getElementById(conta).style.fill = corJaRezado;
+
+    text1.innerHTML = tituloOracao[5] + "<br><br>";
+    text2.innerHTML = tituloOracao[6] + "<br><br>";
+    text3.innerHTML = tituloOracao[3];
+
+    text1.onclick = function(){ alert(oracao[5]); };
+    text2.onclick = function(){ alert(oracao[6]); };
+    text3.onclick = function(){ alert(oracao[3]); };
+}
+
 function refreshProgress() {
     console.log("Atualizando progresso do Terço");
     switch (prayIndex) {
@@ -272,15 +290,7 @@ function refreshProgress() {
             break;
         case 6:
             clearPrayBox();
-            document.getElementById("Pai-Nosso-02").style.fill = corJaRezado;
-
-            text1.innerHTML = tituloOracao[5] + "<br><br>";
-            text2.innerHTML = tituloOracao[6] + "<br><br>";
-            text3.innerHTML = tituloOracao[3];
-
-            text1.onclick = function(){ alert(oracao[5]); };
-            text2.onclick = function(){ alert(oracao[6]); };
-            text3.onclick = function(){ alert(oracao[3]); };
+            paiNosso("Pai-Nosso-02");
             break;
         case 7:
             clearPrayBox();
@@ -322,15 +332,53 @@ function refreshProgress() {
             clearPrayBox();
             aveMaria("1-mist-10");
             break;
-            
+        case 17:
+            clearPrayBox();
+            paiNosso("Pai-Nosso-03");
+            break;
+        case 18:
+            clearPrayBox();
+            rezandoMisterio(2, "2-mist-01");
+            break;
+        case 19:
+            clearPrayBox();
+            aveMaria("2-mist-02");
+            break;
+        case 20:
+            clearPrayBox();
+            aveMaria("2-mist-03");
+            break;
+        case 21:
+            clearPrayBox();
+            aveMaria("2-mist-04");
+            break;
+        case 22:
+            clearPrayBox();
+            aveMaria("2-mist-05");
+            break;
+        case 23:
+            clearPrayBox();
+            aveMaria("2-mist-06");
+            break;
+        case 24:
+            clearPrayBox();
+            aveMaria("2-mist-07");
+            break;
+        case 25:
+            clearPrayBox();
+            aveMaria("2-mist-08");
+            break;
+        case 26:
+            clearPrayBox();
+            aveMaria("2-mist-09");
+            break;
+        case 27:
+            clearPrayBox();
+            aveMaria("2-mist-10");
+            break;
+    
         default:
             clearPrayBox();
             break;
     }
-}
-
-function aveMaria(conta) {
-    text1.innerHTML = tituloOracao[4];
-    text1.onclick = function(){ alert(oracao[4]); };
-    document.getElementById(conta).style.fill = corJaRezado;
 }
