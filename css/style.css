@@ -60,7 +60,7 @@ button:hover{
     transform: translate(-50%, -50%); 
 }
 
-#oracao{
+#texto{
     position: absolute;
     top: 30%;
     left: 50%;
