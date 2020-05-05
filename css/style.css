@@ -53,6 +53,10 @@ button:hover{
     transform: translate(-50%, -50%); 
 }
 
+#auxiliar {
+    padding: 4px 13px;
+}
+
 #prev {
     position: absolute;
     top: 77%;
@@ -62,7 +66,7 @@ button:hover{
 
 #texto{
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
