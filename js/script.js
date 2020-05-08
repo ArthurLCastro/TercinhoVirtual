@@ -238,6 +238,26 @@ function paiNosso(conta) {
     text3.onclick = function(){ alert(oracao[3]); };
 }
 
+function conclusaoDoTerco(){
+    paiNosso("Salve-Rainha");
+    text3.innerHTML = "";
+    text3.onclick = function(){};
+
+    botAux.style.visibility = "visible";
+    botAux.innerHTML = "Avançar";
+    
+    botAux.onclick = function(){
+        clearPrayBox();
+            
+        butNext.innerHTML = "Concluído!";
+
+        text1.innerHTML = tituloOracao[7] + "<br><br>";
+        text2.innerHTML = tituloOracao[8];
+        text1.onclick = function(){ alert(oracao[7]); };
+        text2.onclick = function(){ alert(oracao[8]); }; 
+    };
+}
+
 function refreshProgress() {
     console.log("Atualizando progresso do Terço");
     switch (prayIndex) {
@@ -509,14 +529,7 @@ function refreshProgress() {
             break;
         case 61:
             clearPrayBox();
-            document.getElementById("Salve-Rainha").style.fill = corJaRezado;
-
-            butNext.innerHTML = "Concluído!";
-
-            text1.innerHTML = tituloOracao[7] + "<br><br>";
-            text2.innerHTML = tituloOracao[8];
-            text1.onclick = function(){ alert(oracao[7]); };
-            text2.onclick = function(){ alert(oracao[8]); };
+            conclusaoDoTerco();
             break;
         case 62:
             alert("Parabéns, você concluiu o Terço!!\nCom certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes!");
