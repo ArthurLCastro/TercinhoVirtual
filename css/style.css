@@ -4,8 +4,16 @@
 }
 
 body{
-    background-color: turquoise;
+    /* background-color: turquoise; */
     align-items: center;
+}
+
+.bg-image {
+    background-image: url(/img/ceu/ceu3-blur.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 h1 {
@@ -80,21 +88,21 @@ button:hover{
     margin: 0px;
     text-align: right;
     position: absolute;
-    right: 10px;
+    left: 10px;
     bottom: 10px;
-    opacity: 50%;
+    opacity: 60%;
 }
 
 #dia-semana {
     color: black;
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px;
     text-align: left;
     position: absolute;
     left: 10px;
-    bottom: 10px;
+    bottom: 26px;
 }
 
 @media screen and (min-width: 700px) {
-  
+
 }

@@ -252,9 +252,12 @@ function conclusaoDoTerco(){
         butNext.innerHTML = "Concluído!";
 
         text1.innerHTML = tituloOracao[7] + "<br><br>";
-        text2.innerHTML = tituloOracao[8];
+        text2.innerHTML = tituloOracao[8] + "<br><br>";
+        text3.innerHTML = tituloOracao[0];
+
         text1.onclick = function(){ alert(oracao[7]); };
         text2.onclick = function(){ alert(oracao[8]); }; 
+        text3.onclick = function(){ alert(oracao[0]); }; 
     };
 }
 
