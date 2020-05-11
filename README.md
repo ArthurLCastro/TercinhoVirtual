@@ -9,7 +9,7 @@ Projeto para auxiliar a oração diária do Terço
 * [ ] Adicionar animação no título das orações ao mudarem no centro da tela
 * [ ] Adicionar botões para navegar entre contas de Mistérios
 * [ ] Voltar para cor original da conta quando o botão "Anterior" for clicado
-* [ ] Desenvolver Menu recolhível com "Hamburger button"
+* [X] Desenvolver Menu recolhível com "Hamburger button"
 * [ ] Personalizar cor do terço
 * [ ] Personalizar imagens de fundo
 * [ ] Personalizar contas do terço (formas e cores)
@@ -19,6 +19,7 @@ Projeto para auxiliar a oração diária do Terço
 * [ ] Transformar em App multiplataforma
 * [ ] Adicionar Imagens representativas de cada Mistério
 * [ ] Criar a opção de rezar o Terço da Misericórdia
+* [ ] Adicionar link para folheto da missa do dia como extra
 
 ## Sugestões de Gamificação para crianças:
 
