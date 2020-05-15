@@ -1,3 +1,7 @@
+.menu {
+    visibility: hidden;
+}
+
 .menu-box {
     background-color: rgb(45, 143, 255);
     height: 100%;
