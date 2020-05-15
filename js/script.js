@@ -67,7 +67,7 @@ var oracao = [
 
    "Ave Maria\ncheia de graça, o Senhor é convosco, bendita sois vós entre as mulheres e bendito é o fruto do vosso ventre Jesus. Santa Maria Mãe de Deus, rogai por nós pecadores, agora e na hora de nossa morte.\nAmém.",
 
-   "Glória ao Pai,\nao Filho e o Espírito Santo. Como era no princípio, agora é sempre.\nAmém.",
+   "Glória ao Pai,\nao Filho e o Espírito Santo. Como era no princípio, agora e sempre.\nAmém.",
 
    "Oh! Meu Jesus,\nperdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o céu e socorrei principalmente as que mais precisarem.\nAmém.",
 
@@ -213,7 +213,7 @@ function rezandoMisterio(mist, conta) {
             clearPrayBox();
             
             text1.innerHTML = tituloOracao[4];
-            text1.onclick = function(){ alert(oracao[4]); };
+            text1.onclick = function(){ printOracao(4); };
         }
     };
 
@@ -222,7 +222,7 @@ function rezandoMisterio(mist, conta) {
 
 function aveMaria(conta) {
     text1.innerHTML = tituloOracao[4];
-    text1.onclick = function(){ alert(oracao[4]); };
+    text1.onclick = function(){ printOracao(4); };
     document.getElementById(conta).style.fill = corJaRezado;
 }
 
@@ -233,9 +233,9 @@ function paiNosso(conta) {
     text2.innerHTML = tituloOracao[6] + "<br><br>";
     text3.innerHTML = tituloOracao[3];
 
-    text1.onclick = function(){ alert(oracao[5]); };
-    text2.onclick = function(){ alert(oracao[6]); };
-    text3.onclick = function(){ alert(oracao[3]); };
+    text1.onclick = function(){ printOracao(5); };
+    text2.onclick = function(){ printOracao(6); };
+    text3.onclick = function(){ printOracao(3); };
 }
 
 function conclusaoDoTerco(){
@@ -255,11 +255,16 @@ function conclusaoDoTerco(){
         text2.innerHTML = tituloOracao[8] + "<br><br>";
         text3.innerHTML = tituloOracao[0];
 
-        text1.onclick = function(){ alert(oracao[7]); };
-        text2.onclick = function(){ alert(oracao[8]); }; 
-        text3.onclick = function(){ alert(oracao[0]); }; 
+        text1.onclick = function(){ printOracao(7); };
+        text2.onclick = function(){ printOracao(8); }; 
+        text3.onclick = function(){ printOracao(0); }; 
     };
 }
+
+function printOracao(numOracao){
+    modalSet(tituloOracao[numOracao], oracao[numOracao]);
+    modalDisplay("block");
+};
 
 function refreshProgress() {
     console.log("Atualizando progresso do Terço");
@@ -274,17 +279,17 @@ function refreshProgress() {
             text1.innerHTML = tituloOracao[0] + "<br><br>";
             text2.innerHTML = tituloOracao[1] + "<br><br>";
             text3.innerHTML = tituloOracao[2];
-            text1.onclick = function(){ alert(oracao[0]); };
-            text2.onclick = function(){ alert(oracao[1]); };
-            text3.onclick = function(){ alert(oracao[2]); };
 
+            text1.onclick = function() { printOracao(0); }
+            text2.onclick = function() { printOracao(1); }
+            text3.onclick = function() { printOracao(2); }
             break;
         case 2:
             clearPrayBox();
             document.getElementById("Pai-Nosso-01").style.fill = corJaRezado;
 
             text1.innerHTML = tituloOracao[3];
-            text1.onclick = function(){ alert(oracao[3]); };
+            text1.onclick = function() { printOracao(3); };
             break;
         case 3:
             clearPrayBox();
@@ -292,7 +297,7 @@ function refreshProgress() {
 
             text1.innerHTML = tresAveMarias[1] + "<br><br>";
             text2.innerHTML = tituloOracao[4];
-            text2.onclick = function(){ alert(oracao[4]); };
+            text2.onclick = function() { printOracao(4); };
             break;
         case 4:
             clearPrayBox();
@@ -300,7 +305,7 @@ function refreshProgress() {
 
             text1.innerHTML = tresAveMarias[2] + "<br><br>";
             text2.innerHTML = tituloOracao[4];
-            text2.onclick = function(){ alert(oracao[4]); };
+            text2.onclick = function() { printOracao(4); };
             break;
         case 5:
             clearPrayBox();
@@ -308,7 +313,7 @@ function refreshProgress() {
 
             text1.innerHTML = tresAveMarias[3] + "<br><br>";
             text2.innerHTML = tituloOracao[4];
-            text2.onclick = function(){ alert(oracao[4]); };
+            text2.onclick = function() { printOracao(4); };
             break;
         case 6:
             clearPrayBox();
@@ -535,11 +540,14 @@ function refreshProgress() {
             conclusaoDoTerco();
             break;
         case 62:
-            alert("Parabéns, você concluiu o Terço!!\nCom certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes!");
-            alert("Obrigado por rezar conosco!\nQue Deus te abençoe sempre!");
+            modalSet("Parabéns!!!", "Você concluiu o Terço!! Com certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes! Obrigado por rezar conosco! Que Deus te abençoe sempre!");
+            modalButton.style.display = "block";
+            modalClose.style.display = "none";
+            modalDisplay("block");
             
-            location.reload();
-            
+            modalButton.onclick = function(){
+                location.reload();
+            }
             break;
 
         default:

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tercinho Virtual</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="shortcut icon" type="image/png" href="img/terco-virtual/terco-virtual.svg"/>
 </head>
 <body class="bg-image">
@@ -121,6 +122,19 @@
     <h2 id="dia-semana"></h2>
     <h2 id="assinatura">v1.1 by Arthur Castro</h2>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modal-close">&times;</span>
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-text"></p>
+                <div class="buttons"><button id="modal-button">Finalizar</button></div>
+            </div>
+        </div>
+    </div>
+
     <div class="menu">      
         <div class="menu-box">
             <div id="opcoes-menu">
@@ -139,5 +153,6 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>
