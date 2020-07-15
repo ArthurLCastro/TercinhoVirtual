@@ -84,7 +84,7 @@ function nextPray() {
     if(prayIndex > 1){
         butPrev.style.visibility = "visible";
     }
-    console.log("Index: " + prayIndex);
+    // console.log("Index: " + prayIndex);
 
     refreshProgress();
 }
@@ -95,7 +95,7 @@ function prevPray() {
         prayIndex = 0;
         butPrev.style.visibility = "hidden";
     }
-    console.log("Index: " + prayIndex);
+    // console.log("Index: " + prayIndex);
 
     refreshProgress();
 }
@@ -148,17 +148,19 @@ function paiNosso(conta) {
 
     text1.innerHTML = tituloOracao[5] + "<br><br>";
     text2.innerHTML = tituloOracao[6] + "<br><br>";
-    text3.innerHTML = tituloOracao[3];
+    text3.innerHTML = tituloOracao[9] + "<br><br>";
+    text4.innerHTML = tituloOracao[3];
 
     text1.onclick = function(){ printOracao(5); };
     text2.onclick = function(){ printOracao(6); };
-    text3.onclick = function(){ printOracao(3); };
+    text3.onclick = function(){ printOracao(9); };
+    text4.onclick = function(){ printOracao(3); };
 }
 
 function conclusaoDoTerco(){
     paiNosso("Salve-Rainha");
-    text3.innerHTML = "";
-    text3.onclick = function(){};
+    text4.innerHTML = "";
+    text4.onclick = function(){};
 
     botAux.style.visibility = "visible";
     botAux.innerHTML = "Avançar";
@@ -184,7 +186,7 @@ function printOracao(numOracao){
 };
 
 function refreshProgress() {
-    console.log("Atualizando progresso do Terço");
+    // console.log("Atualizando progresso do Terço");
     switch (prayIndex) {
         case 0:
             clearPrayBox();

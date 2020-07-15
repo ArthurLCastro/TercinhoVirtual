@@ -52,7 +52,8 @@ const tituloOracao = [
    "Glória ao Pai...",
    "Ó, meu Jesus...",
    "Agradecimento do Terço",
-   "Salve Rainha..."
+   "Salve Rainha...",
+   "Mãe de Deus..."
 ]
 
 const oracao = [
@@ -72,5 +73,7 @@ const oracao = [
 
    "Infinitas graças vos damos, Soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos liberais. Dignai-vos, agora e para sempre, tomar-nos debaixo do vosso poderoso amparo e para mais vos obrigar vos saudamos com uma Salve Rainha...",
 
-   "Salve Rainha, Mãe de Misericórdia, vida, doçura, esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa esses vossos olhos misericordiosos a nós volvei, e depois deste desterro nos mostrai a Jesus, bendito fruto do vosso ventre, ó Clemente, ó Piedosa, ó Doce, sempre virgem Maria.<br><br>V. Rogai por nós, Santa Mãe de Deus,<br>R. Para que sejamos dignos das promessas de Cristo.<br><br>Amém."
+   "Salve Rainha, Mãe de Misericórdia, vida, doçura, esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa esses vossos olhos misericordiosos a nós volvei, e depois deste desterro nos mostrai a Jesus, bendito fruto do vosso ventre, ó Clemente, ó Piedosa, ó Doce, sempre virgem Maria.<br><br>V. Rogai por nós, Santa Mãe de Deus,<br>R. Para que sejamos dignos das promessas de Cristo.<br><br>Amém.",
+
+   "Mãe de Deus, derramai sobre a humanidade inteira, as graças eficazes da Vossa chama de amor, agora e na hora da nossa morte.<br>Amém."
 ];
