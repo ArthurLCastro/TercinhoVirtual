@@ -4,12 +4,12 @@ Projeto para auxiliar a oração diária do Terço
 
 ## Lista de Tarefas:
 
-* [ ] Indicar que clicando nos títulos das orações seu texto completo é mostrado
+* [x] Indicar que clicando nos títulos das orações seu texto completo é mostrado
 * [ ] Modificar Mistérios dos Domingos da quaresma, páscoa e advento
 * [ ] Adicionar animação no título das orações ao mudarem no centro da tela
 * [ ] Adicionar botões para navegar entre contas de Mistérios
 * [ ] Voltar para cor original da conta quando o botão "Anterior" for clicado
-* [X] Desenvolver Menu recolhível com "Hamburger button"
+* [x] Desenvolver Menu recolhível com "Hamburger button"
 * [ ] Personalizar cor do terço
 * [ ] Personalizar imagens de fundo
 * [ ] Personalizar contas do terço (formas e cores)

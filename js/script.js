@@ -3,6 +3,7 @@ var butNext = document.getElementById("next");
 
 var botAux = document.getElementById("auxiliar");
 botAux.style.visibility = "hidden";
+showPostit('False')
 
 var misteriosDeHoje = "";
 
@@ -185,11 +186,21 @@ function printOracao(numOracao){
     modalDisplay("block");
 };
 
+function showPostit(visible) {
+    postit = document.getElementById('postit');
+    if (visible == 'True'){
+        postit.style.visibility = "visible";
+    } else {
+        postit.style.visibility = "hidden";
+    }
+}
+
 function refreshProgress() {
     // console.log("Atualizando progresso do Terço");
     switch (prayIndex) {
         case 0:
             clearPrayBox();
+            showPostit('False')
             break;
         case 1:
             clearPrayBox();
@@ -202,6 +213,8 @@ function refreshProgress() {
             text1.onclick = function() { printOracao(0); }
             text2.onclick = function() { printOracao(1); }
             text3.onclick = function() { printOracao(2); }
+
+            showPostit('True');
             break;
         case 2:
             clearPrayBox();
@@ -209,6 +222,8 @@ function refreshProgress() {
 
             text1.innerHTML = tituloOracao[3];
             text1.onclick = function() { printOracao(3); };
+            
+            showPostit('False')
             break;
         case 3:
             clearPrayBox();
