@@ -125,7 +125,8 @@ function rezandoMisterio(mist, conta) {
         clearPrayBox();
         botAux.style.visibility = "visible";
 
-        text1.innerHTML = "Colocamos agora nossas intenções para este mistério";
+        // text1.innerHTML = "Colocamos agora nossas intenções para este mistério";
+        text1.innerHTML = frutos[misteriosDeHoje][mist];
 
         botAux.onclick = function(){
             clearPrayBox();

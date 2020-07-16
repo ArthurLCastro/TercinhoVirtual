@@ -77,3 +77,48 @@ const oracao = [
 
    "Mãe de Deus, derramai sobre a humanidade inteira, as graças eficazes da Vossa chama de amor, agora e na hora da nossa morte.<br>Amém."
 ];
+
+const frutos = [
+    [  // gozosos
+        "",     // Perda de memória para facilitar a contagem do array
+        "Clamamos pela humildade",
+        "Clamamos pela caridade fraterna",
+        "Clamamos pelo espírito de pobreza",
+        "Clamamos pela castidade e obediência",
+        "Clamamos pela procura de Deus em tudo"
+    ],
+ 
+    [ // dolorosos
+        "",     // Perda de memória para facilitar a contagem do array
+
+        // "Fruto: A detestação dos pecados",
+        // "Fruto: A mortificação da carne",
+        // "Fruto: A mortificação do orgulho",
+        // "Fruto: A paciência nas tribulações",
+        // "Fruto: A mortificação do espírito"
+
+        "Colocamos agora nossas intenções para este mistério",
+        "Colocamos agora nossas intenções para este mistério",
+        "Colocamos agora nossas intenções para este mistério",
+        "Colocamos agora nossas intenções para este mistério",
+        "Colocamos agora nossas intenções para este mistério"
+    ],
+ 
+    [ // gloriosos
+        "",     // Perda de memória para facilitar a contagem do array
+        "Clamamos pela fé",
+        "Clamamos pela esperança e desejo do Céu",
+        "Clamamos pela caridade com o próximo",
+        "Clamamos pela graça de uma boa morte",
+        "Clamamos pela devoção filial a Nossa Senhora",
+    ],
+ 
+    [ // luminosos
+        "",     // Perda de memória para facilitar a contagem do array
+        "Clamamos pela graça de ser cheios do Espírito Santo",
+        "Clamamos pela graça de Deus para as famílias",
+        "Clamamos pela graça de viver e anunciar o Evangelho",
+        "Clamamos pela graça de configurar-se a Jesus",
+        "Clamamos pela graça de um coração adorador"
+    ]
+]
