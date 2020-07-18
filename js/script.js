@@ -116,6 +116,8 @@ function clearPrayBox() {
 }
 
 function rezandoMisterio(mist, conta) {
+    document.getElementById(conta).style.fill = corJaRezado;
+
     text1.innerHTML = "No " + mist +  "º mistério contemplemos" + misterios[misteriosDeHoje][mist];
 
     botAux.style.visibility = "visible";
@@ -123,19 +125,17 @@ function rezandoMisterio(mist, conta) {
     
     botAux.onclick = function(){
         clearPrayBox();
-        botAux.style.visibility = "visible";
-
         text1.innerHTML = "Colocamos agora nossas intenções para este mistério";
-
+        
+        botAux.style.visibility = "visible";
+        
         botAux.onclick = function(){
             clearPrayBox();
-            
-            text1.innerHTML = tituloOracao[4];
-            text1.onclick = function(){ printOracao(4); };
-        }
+    
+            text1.innerHTML = tituloOracao[3];
+            text1.onclick = function(){ printOracao(3); }
+        };
     };
-
-    document.getElementById(conta).style.fill = corJaRezado;
 }
 
 function aveMaria(conta) {
@@ -144,41 +144,40 @@ function aveMaria(conta) {
     document.getElementById(conta).style.fill = corJaRezado;
 }
 
-function paiNosso(conta) {
-    document.getElementById(conta).style.fill = corJaRezado;
-
+function fechandoMisterio(){
     text1.innerHTML = tituloOracao[5] + "<br><br>";
     text2.innerHTML = tituloOracao[6] + "<br><br>";
-    text3.innerHTML = tituloOracao[9] + "<br><br>";
-    text4.innerHTML = tituloOracao[3];
+    text3.innerHTML = tituloOracao[9];
 
     text1.onclick = function(){ printOracao(5); };
     text2.onclick = function(){ printOracao(6); };
     text3.onclick = function(){ printOracao(9); };
-    text4.onclick = function(){ printOracao(3); };
 }
 
-function conclusaoDoTerco(){
-    paiNosso("Salve-Rainha");
-    text4.innerHTML = "";
-    text4.onclick = function(){};
-
+function ultimaAveMaria() {
     botAux.style.visibility = "visible";
     botAux.innerHTML = "Avançar";
     
     botAux.onclick = function(){
         clearPrayBox();
-            
-        butNext.innerHTML = "Concluído!";
+        botAux.style.visibility = "hidden";
 
-        text1.innerHTML = tituloOracao[7] + "<br><br>";
-        text2.innerHTML = tituloOracao[8] + "<br><br>";
-        text3.innerHTML = tituloOracao[0];
-
-        text1.onclick = function(){ printOracao(7); };
-        text2.onclick = function(){ printOracao(8); }; 
-        text3.onclick = function(){ printOracao(0); }; 
+        fechandoMisterio()
     };
+}
+
+function conclusaoDoTerco(conta){  
+    document.getElementById(conta).style.fill = corJaRezado;
+      
+    butNext.innerHTML = "Concluído!";
+
+    text1.innerHTML = tituloOracao[7] + "<br><br>";
+    text2.innerHTML = tituloOracao[8] + "<br><br>";
+    text3.innerHTML = tituloOracao[0];
+
+    text1.onclick = function(){ printOracao(7); };
+    text2.onclick = function(){ printOracao(8); }; 
+    text3.onclick = function(){ printOracao(0); }; 
 }
 
 function printOracao(numOracao){
@@ -248,14 +247,16 @@ function refreshProgress() {
             text1.innerHTML = tresAveMarias[3] + "<br><br>";
             text2.innerHTML = tituloOracao[4];
             text2.onclick = function() { printOracao(4); };
+            ultimaAveMaria("Ave-Maria-03")
+            
             break;
         case 6:
             clearPrayBox();
-            paiNosso("Pai-Nosso-02");
+            rezandoMisterio(1, "Pai-Nosso-02");
             break;
         case 7:
             clearPrayBox();
-            rezandoMisterio(1, "1-mist-01");
+            aveMaria("1-mist-01");
             break;
         case 8:
             clearPrayBox();
@@ -292,14 +293,15 @@ function refreshProgress() {
         case 16:
             clearPrayBox();
             aveMaria("1-mist-10");
+            ultimaAveMaria()
             break;
         case 17:
             clearPrayBox();
-            paiNosso("Pai-Nosso-03");
+            rezandoMisterio(2, "Pai-Nosso-03");
             break;
         case 18:
             clearPrayBox();
-            rezandoMisterio(2, "2-mist-01");
+            aveMaria("2-mist-01");
             break;
         case 19:
             clearPrayBox();
@@ -336,14 +338,15 @@ function refreshProgress() {
         case 27:
             clearPrayBox();
             aveMaria("2-mist-10");
+            ultimaAveMaria()
             break;
         case 28:
             clearPrayBox();
-            paiNosso("Pai-Nosso-04");
+            rezandoMisterio(3, "Pai-Nosso-04");
             break;
         case 29:
             clearPrayBox();
-            rezandoMisterio(3, "3-mist-01");
+            aveMaria("3-mist-01");
             break;
         case 30:
             clearPrayBox();
@@ -380,14 +383,15 @@ function refreshProgress() {
         case 38:
             clearPrayBox();
             aveMaria("3-mist-10");
+            ultimaAveMaria()
             break;
         case 39:
             clearPrayBox();
-            paiNosso("Pai-Nosso-05");
+            rezandoMisterio(4, "Pai-Nosso-05");
             break;
         case 40:
             clearPrayBox();
-            rezandoMisterio(4, "4-mist-01");
+            aveMaria("4-mist-01");
             break;
         case 41:
             clearPrayBox();
@@ -424,14 +428,15 @@ function refreshProgress() {
         case 49:
             clearPrayBox();
             aveMaria("4-mist-10");
+            ultimaAveMaria()
             break;
         case 50:
             clearPrayBox();
-            paiNosso("Pai-Nosso-06");
+            rezandoMisterio(5, "Pai-Nosso-06");
             break;
         case 51:
             clearPrayBox();
-            rezandoMisterio(5, "5-mist-01");
+            aveMaria("5-mist-01");
             break;
         case 52:
             clearPrayBox();
@@ -468,13 +473,14 @@ function refreshProgress() {
         case 60:
             clearPrayBox();
             aveMaria("5-mist-10");
+            ultimaAveMaria()
             break;
         case 61:
             clearPrayBox();
-            conclusaoDoTerco();
+            conclusaoDoTerco("Salve-Rainha");
             break;
         case 62:
-            modalSet("Parabéns!!!", "Você concluiu o Terço!! Com certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes! Obrigado por rezar conosco! Que Deus te abençoe sempre!");
+            modalSet("Parabéns!!!", "Você concluiu o Terço! Com certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes! Obrigado por rezar conosco!<br>Paz e Bem!");
             modalButton.style.display = "block";
             modalClose.style.display = "none";
             modalDisplay("block");
