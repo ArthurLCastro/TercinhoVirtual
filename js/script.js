@@ -81,6 +81,10 @@ function start() {
 }
 
 function nextPray() {
+    if(prayIndex < contas.length){
+        document.getElementById(contas[prayIndex]).style.fill = corJaRezado;
+    }
+
     prayIndex++;
     if(prayIndex > 1){
         butPrev.style.visibility = "visible";
@@ -91,6 +95,8 @@ function nextPray() {
 }
 
 function prevPray() {
+    document.getElementById(contas[prayIndex-1]).style.fill = corDoTerco;
+
     prayIndex--;
     if(prayIndex <= 0){
         prayIndex = 0;
@@ -115,9 +121,7 @@ function clearPrayBox() {
     botAux.style.visibility = "hidden";
 }
 
-function rezandoMisterio(mist, conta) {
-    document.getElementById(conta).style.fill = corJaRezado;
-
+function rezandoMisterio(mist) {
     text1.innerHTML = "No " + mist +  "º mistério contemplemos" + misterios[misteriosDeHoje][mist];
 
     botAux.style.visibility = "visible";
@@ -138,10 +142,9 @@ function rezandoMisterio(mist, conta) {
     };
 }
 
-function aveMaria(conta) {
+function aveMaria() {
     text1.innerHTML = tituloOracao[4];
     text1.onclick = function(){ printOracao(4); };
-    document.getElementById(conta).style.fill = corJaRezado;
 }
 
 function fechandoMisterio(){
@@ -166,9 +169,7 @@ function ultimaAveMaria() {
     };
 }
 
-function conclusaoDoTerco(conta){  
-    document.getElementById(conta).style.fill = corJaRezado;
-      
+function conclusaoDoTerco(){      
     butNext.innerHTML = "Concluído!";
 
     text1.innerHTML = tituloOracao[7] + "<br><br>";
@@ -195,303 +196,132 @@ function showPostit(visible) {
 }
 
 function refreshProgress() {
-    // console.log("Atualizando progresso do Terço");
-    switch (prayIndex) {
-        case 0:
-            clearPrayBox();
-            showPostit('False')
-            break;
-        case 1:
-            clearPrayBox();
-            document.getElementById("crucifixo").style.fill = corJaRezado;
+    if (prayIndex == 0){
+        clearPrayBox();
+        showPostit('False');
+    }
+    else if (prayIndex == 1){
+        clearPrayBox();
 
-            text1.innerHTML = tituloOracao[0] + "<br><br>";
-            text2.innerHTML = tituloOracao[1] + "<br><br>";
-            text3.innerHTML = tituloOracao[2];
+        text1.innerHTML = tituloOracao[0] + "<br><br>";
+        text2.innerHTML = tituloOracao[1] + "<br><br>";
+        text3.innerHTML = tituloOracao[2];
 
-            text1.onclick = function() { printOracao(0); }
-            text2.onclick = function() { printOracao(1); }
-            text3.onclick = function() { printOracao(2); }
+        text1.onclick = function() { printOracao(0); }
+        text2.onclick = function() { printOracao(1); }
+        text3.onclick = function() { printOracao(2); }
 
-            showPostit('True');
-            break;
-        case 2:
-            clearPrayBox();
-            document.getElementById("Pai-Nosso-01").style.fill = corJaRezado;
+        showPostit('True');
+    }
+    else if (prayIndex == 2){
+        clearPrayBox();
 
-            text1.innerHTML = tituloOracao[3];
-            text1.onclick = function() { printOracao(3); };
-            
-            showPostit('False')
-            break;
-        case 3:
-            clearPrayBox();
-            document.getElementById("Ave-Maria-01").style.fill = corJaRezado;
+        text1.innerHTML = tituloOracao[3];
+        text1.onclick = function() { printOracao(3); };
+        
+        showPostit('False')
+    }
+    else if (prayIndex == 3){
+        clearPrayBox();
 
-            text1.innerHTML = tresAveMarias[1] + "<br><br>";
-            text2.innerHTML = tituloOracao[4];
-            text2.onclick = function() { printOracao(4); };
-            break;
-        case 4:
-            clearPrayBox();
-            document.getElementById("Ave-Maria-02").style.fill = corJaRezado;
+        text1.innerHTML = tresAveMarias[1] + "<br><br>";
+        text2.innerHTML = tituloOracao[4];
+        text2.onclick = function() { printOracao(4); };
+    }
+    else if (prayIndex == 4){
+        clearPrayBox();
 
-            text1.innerHTML = tresAveMarias[2] + "<br><br>";
-            text2.innerHTML = tituloOracao[4];
-            text2.onclick = function() { printOracao(4); };
-            break;
-        case 5:
-            clearPrayBox();
-            document.getElementById("Ave-Maria-03").style.fill = corJaRezado;
+        text1.innerHTML = tresAveMarias[2] + "<br><br>";
+        text2.innerHTML = tituloOracao[4];
+        text2.onclick = function() { printOracao(4); };
+    }
+    else if (prayIndex == 5){
+        clearPrayBox();
 
-            text1.innerHTML = tresAveMarias[3] + "<br><br>";
-            text2.innerHTML = tituloOracao[4];
-            text2.onclick = function() { printOracao(4); };
-            ultimaAveMaria("Ave-Maria-03")
-            
-            break;
-        case 6:
-            clearPrayBox();
-            rezandoMisterio(1, "Pai-Nosso-02");
-            break;
-        case 7:
-            clearPrayBox();
-            aveMaria("1-mist-01");
-            break;
-        case 8:
-            clearPrayBox();
-            aveMaria("1-mist-02");
-            break;
-        case 9:
-            clearPrayBox();
-            aveMaria("1-mist-03");
-            break;
-        case 10:
-            clearPrayBox();
-            aveMaria("1-mist-04");
-            break;
-        case 11:
-            clearPrayBox();
-            aveMaria("1-mist-05");
-            break;
-        case 12:
-            clearPrayBox();
-            aveMaria("1-mist-06");
-            break;
-        case 13:
-            clearPrayBox();
-            aveMaria("1-mist-07");
-            break;
-        case 14:
-            clearPrayBox();
-            aveMaria("1-mist-08");
-            break;
-        case 15:
-            clearPrayBox();
-            aveMaria("1-mist-09");
-            break;
-        case 16:
-            clearPrayBox();
-            aveMaria("1-mist-10");
-            ultimaAveMaria()
-            break;
-        case 17:
-            clearPrayBox();
-            rezandoMisterio(2, "Pai-Nosso-03");
-            break;
-        case 18:
-            clearPrayBox();
-            aveMaria("2-mist-01");
-            break;
-        case 19:
-            clearPrayBox();
-            aveMaria("2-mist-02");
-            break;
-        case 20:
-            clearPrayBox();
-            aveMaria("2-mist-03");
-            break;
-        case 21:
-            clearPrayBox();
-            aveMaria("2-mist-04");
-            break;
-        case 22:
-            clearPrayBox();
-            aveMaria("2-mist-05");
-            break;
-        case 23:
-            clearPrayBox();
-            aveMaria("2-mist-06");
-            break;
-        case 24:
-            clearPrayBox();
-            aveMaria("2-mist-07");
-            break;
-        case 25:
-            clearPrayBox();
-            aveMaria("2-mist-08");
-            break;
-        case 26:
-            clearPrayBox();
-            aveMaria("2-mist-09");
-            break;
-        case 27:
-            clearPrayBox();
-            aveMaria("2-mist-10");
-            ultimaAveMaria()
-            break;
-        case 28:
-            clearPrayBox();
-            rezandoMisterio(3, "Pai-Nosso-04");
-            break;
-        case 29:
-            clearPrayBox();
-            aveMaria("3-mist-01");
-            break;
-        case 30:
-            clearPrayBox();
-            aveMaria("3-mist-02");
-            break;
-        case 31:
-            clearPrayBox();
-            aveMaria("3-mist-03");
-            break;
-        case 32:
-            clearPrayBox();
-            aveMaria("3-mist-04");
-            break;
-        case 33:
-            clearPrayBox();
-            aveMaria("3-mist-05");
-            break;
-        case 34:
-            clearPrayBox();
-            aveMaria("3-mist-06");
-            break;
-        case 35:
-            clearPrayBox();
-            aveMaria("3-mist-07");
-            break;
-        case 36:
-            clearPrayBox();
-            aveMaria("3-mist-08");
-            break;
-        case 37:
-            clearPrayBox();
-            aveMaria("3-mist-09");
-            break;
-        case 38:
-            clearPrayBox();
-            aveMaria("3-mist-10");
-            ultimaAveMaria()
-            break;
-        case 39:
-            clearPrayBox();
-            rezandoMisterio(4, "Pai-Nosso-05");
-            break;
-        case 40:
-            clearPrayBox();
-            aveMaria("4-mist-01");
-            break;
-        case 41:
-            clearPrayBox();
-            aveMaria("4-mist-02");
-            break;
-        case 42:
-            clearPrayBox();
-            aveMaria("4-mist-03");
-            break;
-        case 43:
-            clearPrayBox();
-            aveMaria("4-mist-04");
-            break;
-        case 44:
-            clearPrayBox();
-            aveMaria("4-mist-05");
-            break;
-        case 45:
-            clearPrayBox();
-            aveMaria("4-mist-06");
-            break;
-        case 46:
-            clearPrayBox();
-            aveMaria("4-mist-07");
-            break;
-        case 47:
-            clearPrayBox();
-            aveMaria("4-mist-08");
-            break;
-        case 48:
-            clearPrayBox();
-            aveMaria("4-mist-09");
-            break;
-        case 49:
-            clearPrayBox();
-            aveMaria("4-mist-10");
-            ultimaAveMaria()
-            break;
-        case 50:
-            clearPrayBox();
-            rezandoMisterio(5, "Pai-Nosso-06");
-            break;
-        case 51:
-            clearPrayBox();
-            aveMaria("5-mist-01");
-            break;
-        case 52:
-            clearPrayBox();
-            aveMaria("5-mist-02");
-            break;
-        case 53:
-            clearPrayBox();
-            aveMaria("5-mist-03");
-            break;
-        case 54:
-            clearPrayBox();
-            aveMaria("5-mist-04");
-            break;
-        case 55:
-            clearPrayBox();
-            aveMaria("5-mist-05");
-            break;
-        case 56:
-            clearPrayBox();
-            aveMaria("5-mist-06");
-            break;
-        case 57:
-            clearPrayBox();
-            aveMaria("5-mist-07");
-            break;
-        case 58:
-            clearPrayBox();
-            aveMaria("5-mist-08");
-            break;
-        case 59:
-            clearPrayBox();
-            aveMaria("5-mist-09");
-            break;
-        case 60:
-            clearPrayBox();
-            aveMaria("5-mist-10");
-            ultimaAveMaria()
-            break;
-        case 61:
-            clearPrayBox();
-            conclusaoDoTerco("Salve-Rainha");
-            break;
-        case 62:
-            modalSet("Parabéns!!!", "Você concluiu o Terço! Com certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes! Obrigado por rezar conosco!<br>Paz e Bem!");
-            modalButton.style.display = "block";
-            modalClose.style.display = "none";
-            modalDisplay("block");
-            
-            modalButton.onclick = function(){
-                location.reload();
-            }
-            break;
-
-        default:
-            clearPrayBox();
-            break;
+        text1.innerHTML = tresAveMarias[3] + "<br><br>";
+        text2.innerHTML = tituloOracao[4];
+        text2.onclick = function() { printOracao(4); };
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 6){
+        clearPrayBox();
+        rezandoMisterio(1);
+    }
+    else if ((prayIndex >= 7) && (prayIndex <= 15)){
+        clearPrayBox();
+        aveMaria();
+    }
+    else if (prayIndex == 16){
+        clearPrayBox();
+        aveMaria();
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 17){
+        clearPrayBox();
+        rezandoMisterio(2);
+    }
+    else if ((prayIndex >= 18) && (prayIndex <= 26)){
+        clearPrayBox();
+        aveMaria();
+    }
+    else if (prayIndex == 27){
+        clearPrayBox();
+        aveMaria();
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 28){
+        clearPrayBox();
+        rezandoMisterio(3);
+    }
+    else if ((prayIndex >= 29) && (prayIndex <= 37)){
+        clearPrayBox();
+        aveMaria();
+    }
+    else if (prayIndex == 38){
+        clearPrayBox();
+        aveMaria();
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 39){
+        clearPrayBox();
+        rezandoMisterio(4);
+    }
+    else if ((prayIndex >= 40) && (prayIndex <= 48)){
+        clearPrayBox();
+        aveMaria();
+    }
+    else if (prayIndex == 49){
+        clearPrayBox();
+        aveMaria();
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 50){
+        clearPrayBox();
+        rezandoMisterio(5);
+    }
+    else if ((prayIndex >= 51) && (prayIndex <= 59)){
+        clearPrayBox();
+        aveMaria();
+    }
+    else if (prayIndex == 60){
+        clearPrayBox();
+        aveMaria();
+        ultimaAveMaria()
+    }
+    else if (prayIndex == 61){
+        clearPrayBox();
+        conclusaoDoTerco();
+    }
+    else if (prayIndex == 62){
+        modalSet("Parabéns!!!", "Você concluiu o Terço! Com certeza Nossa mãezinha e nosso maravilhoso Deus estão muito felizes! Obrigado por rezar conosco!<br>Paz e Bem!");
+        modalButton.style.display = "block";
+        modalClose.style.display = "none";
+        modalDisplay("block");
+        
+        modalButton.onclick = function(){
+            location.reload();
+        }
+    } else {
+        clearPrayBox();
     }
 }

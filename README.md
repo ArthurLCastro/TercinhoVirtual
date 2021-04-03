@@ -8,7 +8,7 @@ Projeto para auxiliar a oração diária do Terço
 * [ ] Modificar Mistérios dos Domingos da quaresma, páscoa e advento
 * [ ] Adicionar animação no título das orações ao mudarem no centro da tela
 * [ ] Adicionar botões para navegar entre contas de Mistérios
-* [ ] Voltar para cor original da conta quando o botão "Anterior" for clicado
+* [x] Voltar para cor original da conta quando o botão "Anterior" for clicado
 * [x] Desenvolver Menu recolhível com "Hamburger button"
 * [ ] Personalizar cor do terço
 * [ ] Personalizar imagens de fundo
