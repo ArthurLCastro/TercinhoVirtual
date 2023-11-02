@@ -5,7 +5,7 @@ var botAux = document.getElementById("auxiliar");
 botAux.style.visibility = "hidden";
 showPostit('False')
 
-var misteriosDeHoje = "";
+var misterioSelecionado = "";
 
 // var prayBox = document.getElementById("texto");
 var text1 = document.getElementById("frase-01");
@@ -43,24 +43,24 @@ function misterioDeHoje(){
         case "Segunda-Feira":
         case "Sábado":
             misterioCabecalho.innerHTML = "Hoje rezamos os Mistérios Gozosos";
-            misteriosDeHoje = 0;
+            misterioSelecionado = 0;
             break;
 
         case "Terça-Feira":
         case "Sexta-Feira":
             misterioCabecalho.innerHTML = "Hoje rezamos os Mistérios Dolorosos";    
-            misteriosDeHoje = 1;
+            misterioSelecionado = 1;
             break;
 
         case "Quarta-Feira":
         case "Domingo":
             misterioCabecalho.innerHTML = "Hoje rezamos os Mistérios Gloriosos";    
-            misteriosDeHoje = 2;
+            misterioSelecionado = 2;
             break;
 
         case "Quinta-Feira":
             misterioCabecalho.innerHTML = "Hoje rezamos os Mistérios Luminosos";    
-            misteriosDeHoje = 3;
+            misterioSelecionado = 3;
             break;
                         
         default:
@@ -69,6 +69,31 @@ function misterioDeHoje(){
 }
 
 misterioDeHoje();
+
+function escolherTerco(terco) {
+    misterioSelecionado = terco;
+
+    switch(terco) {
+        case 0:
+            document.getElementById("misterio-de-hoje").innerHTML = "Mistérios Gozosos";
+            break;
+        case 1:
+            document.getElementById("misterio-de-hoje").innerHTML = "Mistérios Dolorosos";
+            break;
+        case 2:
+            document.getElementById("misterio-de-hoje").innerHTML = "Mistérios Gloriosos";
+            break;
+        case 3:
+            document.getElementById("misterio-de-hoje").innerHTML = "Mistérios Luminosos";
+            break;
+    }
+
+    prayIndex = 0;
+    refreshProgress()   // Reseta progresso do terço
+    for (let index = 0; index < contas.length; index++) {   // Reseta cores das contas
+        document.getElementById(contas[index]).style.fill = corDoTerco;        
+    }
+}
 
 var prayIndex = 0;
 
@@ -122,7 +147,7 @@ function clearPrayBox() {
 }
 
 function rezandoMisterio(mist) {
-    text1.innerHTML = "No " + mist +  "º mistério contemplemos" + misterios[misteriosDeHoje][mist];
+    text1.innerHTML = "No " + mist +  "º mistério contemplemos" + misterios[misterioSelecionado][mist];
 
     botAux.style.visibility = "visible";
     botAux.innerHTML = "Avançar";
@@ -325,3 +350,37 @@ function refreshProgress() {
         clearPrayBox();
     }
 }
+
+document.querySelector('body').addEventListener('keydown', function(event) {
+		 
+    var tecla = event.keyCode;
+    
+    if(tecla == 13) {
+
+     // tecla ENTER
+        
+    } else if(tecla == 27) {
+     
+     // tecla ESC
+        
+    } else if(tecla == 37) {
+     
+     // seta pra ESQUERDA
+     prevPray()
+        
+    } else if(tecla == 38) {
+     
+     // seta pra CIMA
+        
+    } else if(tecla == 39) {
+     
+     // seta pra DIREITA
+     nextPray()
+        
+    } else if(tecla == 40) {
+     
+     // seta pra BAIXO
+        
+    }
+ 
+});

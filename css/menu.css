@@ -1,5 +1,5 @@
 .menu {
-    visibility: hidden;
+    visibility: visible;
 }
 
 .menu-box {
@@ -23,8 +23,13 @@
     margin: 0;
 }
 
-#opcoes-menu{
+#opcoes-menu {
     visibility: hidden;
+}
+
+#options {
+    /* height: 300px;
+    overflow-y: auto; */
 }
 
 .container {
